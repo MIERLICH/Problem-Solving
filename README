@@ -1,0 +1,36 @@
+Mierlich Daniel 323CB
+
+---Bani---
+Pentru setul de instructiuni 1:
+	Folosesc functia fast_pow de la laborator. Dupa fiecare bancnota poate sa fie
+	una din 2 bancnode, incepand cu 5 bancnode se scoate formula 5 * 2^(N -1).
+Pentru setul de instructiuni 2:
+	Folosesc programare dinamica. Matricea[i][0] va insemna bancnota 10,
+	Matricea[i][1] va insemna bancnota 50 ......Matricea de [i][4] va
+	va insemna bancnota 500
+	La fiecare pas adun valoarea de la pasul precedent. La bancnota
+	10 adica [i][0] voi aduna bancnotele precedente adica pentru bancnota
+	10 acestea sunt 50 si 100. Si tot asa pentru fiecare bancnota.
+	Si calculez si suma totala.
+
+---Gard---
+Initial sortez vectorul de garduri dupa inceput crescator. Adica gardul cu inceputul minim va fi primul,
+al 2-lea criteriu de sortare este sfarsitul bucatei de gard. Iau prima bucata ca referinta si verific
+daca urmatoarea bucata este inclusa in bucata de referinta rezulta ca este o bucata renundanta.
+Daca nu actualizez referinta.
+
+---Bomboane---
+Aloc matricea dinamic. Matriccea va avea dimensiunea N *(M+1)Pentru primul elev am caz de baza,
+setez 1 in matrice in intervalul [minim_bomboane-maxim_bomboane] pe linia [0].
+Dupa, pentru fiecare elev i iau in consideratie datele de la elevul i-1. Daca un elev are un interval [0,2]
+eu iau datele de la elevul anterior si mut datele mai la dreapta cu [0,2] de fiecare data.
+Adica la primul pas vectorul precedent il mut la dreapta cu 0(cum ar fi sa siftez), a doua oara
+il mut la dreapta cu 1, si ultima oara il mut la dreapta cu 2, adun suma tuturor siftarilor si asta va fi
+solutia pentru vectorul[i]. Solutia finala va fi pe ultima linie si ultima coloana. 
+
+---Sala---
+Initial sortez vecotrul descrescator dupa greutatea.
+Am structura de date priority_queue pentru inserare si eliminare rapida.
+Parcurg toate gantere, daca in coada mea mai este loc, adica daca am pus mai putin de M
+gantere o pun in coada. Daca deja am pus M-gantere o elimin pe cea cu cele mai mici repetari
+si o adaug pe gantera curenta. La fiecare pas calculez produsul maxim si il salvez.
